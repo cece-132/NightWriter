@@ -13,4 +13,7 @@ RSpec.describe English do
     expect(@english.alpha).to be_a Hash
   end
 
+  it "has letters in the alpha attribute" do
+    expect(@english.alpha).to eq({})
+  end
 end
