@@ -1,4 +1,4 @@
-require './lib/english_letters'
+require './lib/english'
 
 RSpec.describe English do
   before :each do
