@@ -8,4 +8,9 @@ RSpec.describe English do
   it "exists" do
   expect(@english).to be_a(English)
   end
+
+  it "has attributes" do
+    expect(@english.alpha).to be_a Hash
+  end
+
 end
