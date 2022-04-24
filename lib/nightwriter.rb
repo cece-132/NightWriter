@@ -1,6 +1,6 @@
 require 'pry'
 
-input_file = File.open(ARGV.first, "r")
+input_file = File.open(ARGV[0], "r")
 message_reader = input_file.read.strip
 input_file.close
 
@@ -12,4 +12,4 @@ writer.close
 
 puts "Created '#{ARGV[1]}' containing #{chars} characters"
 
-File.open(ARGV[0], "w") { |f| f.write "#{Time.now} - User logged in\n" }
+# File.open(ARGV[1], "w") { |writer| writer.write "Created '#{ARGV[1]}' containing #{chars} characters" }
