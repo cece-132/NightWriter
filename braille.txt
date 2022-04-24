@@ -1,4 +1,1 @@
-Hello World, don't worry we aren't dying afterall,
-as it turns out.
-
-Look at that you got it!
+Hello World, don't worry we aren't dying afterall,as it turns out.Look at that you got it!
