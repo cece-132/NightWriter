@@ -11,41 +11,42 @@ class Translator
     @brailler = []
   end
 
-  def limits
+  def split_lines
     message_chunks = @message_array.each_slice(40).map(&:join)
-    english = English.new
-    message_chunks.each do |chunk|
-      @letter_string << chunk.split("")
-    end
+      message_chunks.map do |chunk|
+        @letter_string << chunk.split("")
+      end
     braille_array
   end
 
   def braille_array
-    binding.pry
-    # limits
     english = English.new
-      @letter_string.each do |index|
-       index.map do |letter|
-        @brailler << english.alpha[letter]
-        formatted_braille
+      @letter_string.each do |line|
+        lines = []
+        line.each do |letter|
+          lines << english.alpha[letter]
+        end
+        @brailler << lines
       end
-    end
+    formatted_braille
   end
 
   def formatted_braille
-    col1 = []
-    col2 = []
-    col3 = []
-    braille_array
-    @brailler.each do |letter|
-      letter.each do |index|
-        col1.push(index[0])
-        col2.push(index[1])
-        col3.push(index[2])
+    rows = {}
+    output = ""
+
+    @brailler.each_with_index do |braille_line, index|
+      rows[index] = []
+      rows[index+1] = []
+      rows[index+2] = []
+      braille_line.each do |braille_letter|
+        rows[index].push(braille_letter[0])
+        rows[index+1].push(braille_letter[1])
+        rows[index+2].push(braille_letter[2])
       end
+      output << "#{rows[index].join}\n#{rows[index+1].join}\n#{rows[index+2].join}\n"
     end
-    binding.pry
-    "#{col1.join}\n#{col2.join}\n#{col3.join}"
+    output
   end
 
 end
