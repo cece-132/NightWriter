@@ -34,7 +34,6 @@ class Translator
   def formatted_braille
     rows = {}
     output = ""
-
     @brailler.each_with_index do |braille_line, index|
       rows[index] = []
       rows[index+1] = []
