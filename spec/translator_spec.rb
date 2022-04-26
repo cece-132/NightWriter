@@ -12,8 +12,20 @@ RSpec.describe Translator do
 
   it "has attributes" do
     expect(@translate.char_length).to be_a Integer
+    #expect(@translate.letter_string).to eq([])
+    #expect(@translate.brailler).to eq([])
   end
 
+  it "can split lines" do
 
+  end
+
+  it "can braille array" do
+
+  end
+
+  it "can format the braille" do
+
+  end
 
 end
