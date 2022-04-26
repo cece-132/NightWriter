@@ -1,4 +1,4 @@
-require_relative 'english_to_braille'
+require_relative 'alphabet'
 require_relative 'translator'
 require 'pry'
 

@@ -1,7 +1,7 @@
 require_relative 'translator'
 require 'pry'
 
-class English
+class Alphabet
   attr_reader :alpha
   def initialize
     @alpha = {

@@ -1,9 +1,14 @@
-require './lib/english_to_braille'
+require 'simplecov'
+SimpleCov.start
+
+require './lib/alphabet'
 require './lib/translator'
+
 
 RSpec.describe Translator do
   before :each do
     @translate = Translator.new('message_reader')
+    @translate.split_lines
   end
 
   it "exists" do
@@ -12,8 +17,8 @@ RSpec.describe Translator do
 
   it "has attributes" do
     expect(@translate.char_length).to be_a Integer
-    #expect(@translate.letter_string).to eq([])
-    #expect(@translate.brailler).to eq([])
+    expect(@translate.letter_string).to eq([])
+    expect(@translate.brailler).to eq([])
   end
 
   it "can split lines" do

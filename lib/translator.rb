@@ -1,4 +1,4 @@
-require_relative 'english_to_braille'
+require_relative 'alphabet'
 require 'pry'
 
 class Translator
@@ -20,11 +20,11 @@ class Translator
   end
 
   def braille_array
-    english = English.new
+    alphabet = Alphabet.new
       @letter_string.each do |line|
         lines = []
         line.each do |letter|
-          lines << english.alpha[letter]
+          lines << alphabet.alpha[letter]
         end
         @brailler << lines
       end

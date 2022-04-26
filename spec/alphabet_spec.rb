@@ -1,16 +1,19 @@
-require './lib/english_to_braille'
+require 'simplecov'
+SimpleCov.start
 
-RSpec.describe English do
+require './lib/alphabet'
+
+RSpec.describe Alphabet do
   before :each do
-    @english = English.new
+    @alphabet = Alphabet.new
   end
 
   it "exists" do
-  expect(@english).to be_a(English)
+  expect(@alphabet).to be_a(Alphabet)
   end
 
   it "has attributes" do
-    expect(@english.alpha).to be_a Hash
+    expect(@alphabet.alpha).to be_a Hash
   end
 
   it "has letters in the alpha attribute" do
@@ -26,7 +29,7 @@ RSpec.describe English do
       "Y" => ["00",".0","00"], "Z" => ["0.",".0","00"], " " => ["..","..",".."]
               }
 
-    expect(@english.alpha).to eq(expected)
+    expect(@alphabet.alpha).to eq(expected)
   end
 
 end
