@@ -8,7 +8,7 @@ class Translator
     @char_length = message_reader.length
     @message_array = message_reader.split("")
     @letter_string = []
-    @brailler = []
+    @braille = []
   end
 
   def split_lines
@@ -26,7 +26,7 @@ class Translator
         line.each do |letter|
           lines << alphabet.alpha[letter]
         end
-        @brailler << lines
+        @braille << lines
       end
     formatted_braille
   end
@@ -34,7 +34,7 @@ class Translator
   def formatted_braille
     rows = {}
     output = ""
-    @brailler.each_with_index do |braille_line, index|
+    @braille.each_with_index do |braille_line, index|
       rows[index] = []
       rows[index+1] = []
       rows[index+2] = []
