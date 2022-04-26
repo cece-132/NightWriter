@@ -1,4 +1,4 @@
-require './lib/english'
+require './lib/english_to_braille'
 
 RSpec.describe English do
   before :each do
@@ -22,94 +22,10 @@ RSpec.describe English do
                 P: ["00","0.","0."], Q: ["00","00","0."], R: ["0.","00","0."],
                 S: [".0","0.","0."], T: [".0","00","0."], U: ["0.","..","00"],
                 V: ["0.","0.","00"], W: [".0","00",".0"], X: ["00","..","00"],
-                Y: ["00",".0","00"], Z: ["0.",".0","00"]
+                Y: ["00",".0","00"], Z: ["0.",".0","00"], " " => ["..","..",".."]
               }
 
     expect(@english.alpha).to eq(expected)
   end
 
 end
-#
-# def alpha_hash
-#   @alpha[A] = "A"
-#   @alpha[B] = "B"
-#   @alpha[C] = "C"
-#   @alpha[D] = "D"
-#   @alpha[E] = "E"
-#   @alpha[F] = "F"
-#   @alpha[G] = "G"
-#   @alpha[H] = "H"
-#   @alpha[I] = "I"
-#   @alpha[J] = "J"
-#   @alpha[K] = "K"
-#   @alpha[L] = "L"
-#   @alpha[M] = "M"
-#   @alpha[N] = "N"
-#   @alpha[O] = "O"
-#   @alpha[P] = "P"
-#   @alpha[Q] = "Q"
-#   @alpha[R] = "R"
-#   @alpha[S] = "S"
-#   @alpha[T] = "T"
-#   @alpha[U] = "U"
-#   @alpha[V] = "V"
-#   @alpha[W] = "W"
-#   @alpha[X] = "X"
-#   @alpha[Y] = "Y"
-#   @alpha[Z] = "Z"
-#end
-#
-# alpha[:A] = "A"
-# alpha[:B] = "B"
-# alpha[:C] = "C"
-# alpha[:D] = "D"
-# alpha[:E] = "E"
-# alpha[:F] = "F"
-# alpha[:G] = "G"
-# alpha[:H] = "H"
-# alpha[:I] = "I"
-# alpha[:J] = "J"
-# alpha[:K] = "K"
-# alpha[:L] = "L"
-# alpha[:M] = "M"
-# alpha[:N] = "N"
-# alpha[:O] = "O"
-# alpha[:P] = "P"
-# alpha[:Q] = "Q"
-# alpha[:R] = "R"
-# alpha[:S] = "S"
-# alpha[:T] = "T"
-# alpha[:U] = "U"
-# alpha[:V] = "V"
-# alpha[:W] = "W"
-# alpha[:X] = "X"
-# alpha[:Y] = "Y"
-# alpha[:Z] = "Z"
-#
-#
-#A: "A",
-# B: "B",
-# C: "C",
-# D: "D",
-# E: "E",
-# F: "F",
-# G: "G",
-# H: "H",
-# I: "I",
-# J: "J",
-# K: "K",
-# L: "L",
-# M: "M",
-# N: "N",
-# O: "O",
-# P: "P",
-# Q: "Q",
-# R: "R",
-# S: "S",
-# T: "T",
-# U: "U",
-# V: "V",
-# W: "W",
-# X: "X",
-# Y: "Y",
-# Z: "Z"
